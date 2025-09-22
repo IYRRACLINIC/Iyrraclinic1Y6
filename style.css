@@ -1,0 +1,92 @@
+:root{
+  --bg:#fbfbfd;
+  --card:#ffffff;
+  --accent:#d63384;
+  --muted:#6b7280;
+  --glass: rgba(255,255,255,0.6);
+  --maxw:1100px;
+  --radius:14px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#fff 0%,#fbfbfd 100%);color:#111;line-height:1.5}
+.wrap{max-width:var(--maxw);margin:24px auto;padding:20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8ab3);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
+.brand h1{margin:0;font-size:18px}
+.tag{color:var(--muted);font-size:13px}
+nav{display:flex;gap:12px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+nav a:hover{color:#111;background:rgba(0,0,0,0.03)}
+.cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:22px}
+.hero-card{background:var(--card);padding:28px;border-radius:18px;box-shadow:0 6px 24px rgba(16,24,40,0.06)}
+.hero h2{margin:0 0 8px;font-size:26px}
+.hero p{margin:0;color:var(--muted)}
+.contact-quick{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;gap:8px;align-items:center;padding:10px 12px;border-radius:10px;text-decoration:none}
+.btn.call{background:#0ea5a4;color:#fff}
+.btn.wh{background:#25D366;color:#fff}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.card h3{margin:0 0 8px}
+.muted{color:var(--muted);font-size:14px}
+
+/* Gallery & Contact */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery .tile{height:120px;border-radius:10px;background:linear-gradient(180deg,#eee,#f7f7f7);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+footer{margin-top:26px;padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff);display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .services{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  header{flex-direction:column;align-items:flex-start}
+  nav{order:2;width:100%;display:flex;overflow:auto}
+  .services{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .logo{width:52px;height:52px}
+}
+
+/* small helpers */
+.small{font-size:13px;color:var(--muted)}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(214,51,132,0.08);color:var(--accent);font-weight:600}
+
+/* Logo styling */
+.logo-img {
+  height: 60px;
+  width: auto;
+  border-radius: 12px; /* optional */
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
